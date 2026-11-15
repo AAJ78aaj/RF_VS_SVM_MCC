@@ -1,0 +1,3 @@
+"year","N","positive_n","negative_n","training_n","training_positive_n","training_negative_n","holdout_n","holdout_positive_n","holdout_negative_n","prevalence","confidence_level","margin_of_error","z_critical","cochran_n_unrounded","cochran_n_ceiling"
+2005,1021,162,859,722,118,604,299,44,255,0.158667972575906,0.95,0.05,1.95996398454005,205.122295293509,206
+2009,1021,162,859,722,118,604,299,44,255,0.158667972575906,0.95,0.05,1.95996398454005,205.122295293509,206

@@ -1,0 +1,3 @@
+"year","N","k","weights","Moran_I","two_sided_permutation_p","permutations","seed"
+2005,1021,8,"directed 8-nearest-neighbor row-standardized",0.835797259230515,1e-04,9999,20261104
+2009,1021,8,"directed 8-nearest-neighbor row-standardized",0.835797259230515,1e-04,9999,20261104

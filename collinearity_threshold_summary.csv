@@ -1,0 +1,9 @@
+"year","predictor_set","method","training_n","total_unique_pairs","valid_unique_pairs","undefined_pairs","abs_r_gt_0_6","abs_r_gt_0_7","abs_r_gt_0_8","strongest_pair","strongest_correlation"
+2005,"active7","pearson",722,21,21,0,3,3,2,"NBR / B54",-0.978226947173154
+2005,"active7","spearman",722,21,21,0,3,2,2,"NBR / B54",-0.964782754058329
+2005,"diagnostic9","pearson",722,36,36,0,8,8,6,"NBR / B54",-0.978226947173154
+2005,"diagnostic9","spearman",722,36,36,0,8,7,5,"NBR / B54",-0.964782754058329
+2009,"active7","pearson",722,21,21,0,4,2,2,"NBR / B54",-0.973485063524535
+2009,"active7","spearman",722,21,21,0,3,2,1,"NBR / B54",-0.937064858957734
+2009,"diagnostic9","pearson",722,36,36,0,9,7,7,"NBR / B54",-0.973485063524535
+2009,"diagnostic9","spearman",722,36,36,0,8,7,2,"NBR / B54",-0.937064858957734

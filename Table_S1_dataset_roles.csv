@@ -1,0 +1,7 @@
+"dataset","years","N","positive","negative","role"
+"Book reference","2005 and 2009","1021 each","162","859","Original comparison and added spatial validation; shared locations/labels"
+"Seed-123 training","2005 and 2009","722 each","118","604","Historical fixed-call model training"
+"Seed-123 test","2005 and 2009","299 each","44","255","Original reported holdout matrices"
+"Historical spatial diagnostic","2009-designated","714 training / 307 diagnostic","49 in diagnostic (historically reported)","258 in diagnostic (historically reported)","No retained membership record; not assumed to be 307 minus 8"
+"New spatial out-of-fold comparison","2005 and 2009","1021 each","162","859","New matched nested validation; every point tested once"
+"MPR_all2009","2009 only","1445","120","1325","ArcGIS-extracted random points for supplementary topography, not independent classifier validation"

@@ -1,0 +1,105 @@
+REPRODUCIBLE ANALYSIS SUMMARY
+
+Design: A new, documented matched spatial validation was run for the 2005 and 2009 Book datasets. It is not represented as a reproduction of the undocumented historical spatial analysis.
+Coordinate geometry: 5000-by-5000 coordinate-unit grid blocks with a 1000-unit test-to-training buffer and grid-origin offsets of (0, 0) coordinate units. The CSVs do not contain a CRS field, so metric units must be confirmed by the authors before publication.
+Models: RF used 500 trees; mtry was selected within the outer training data from {2,4,7} using 3-fold inner spatial CV. SVM used e1071 C-classification with a radial kernel, scale=TRUE, no class weights, and cost {0.25,1,4,16} x gamma {1/14,1/7,2/7} selected by inner spatial CV. Epsilon was not used.
+No response-informed feature selection or threshold tuning was performed; both models used the same seven archived binary-comparison predictors.
+
+ARCHIVED RANDOM SPLIT (separate from new spatial CV):
+ partition   n negative positive
+  training 722      604      118
+      test 299      255       44
+
+NEW MATCHED SPATIAL-CV PERFORMANCE:
+ year model    N  TN FP FN  TP      OA   Kappa     MCC Precision  Recall
+ 2005    RF 1021 841 18 31 131 0.95201 0.81419 0.81519   0.87919 0.80864
+ 2005   SVM 1021 837 22 40 122 0.93928 0.76182 0.76364   0.84722 0.75309
+ 2009    RF 1021 844 15 19 143 0.96670 0.87401 0.87411   0.90506 0.88272
+ 2009   SVM 1021 851  8 19 143 0.97356 0.89814 0.89892   0.94702 0.88272
+ Specificity      F1
+     0.97905 0.84244
+     0.97439 0.79739
+     0.98254 0.89375
+     0.99069 0.91374
+
+BLOCK-BOOTSTRAP INTERVALS:
+ year                       metric  estimate     CI_low    CI_high
+ 2005                       RF_MCC  0.815186  0.6364683  0.9030992
+ 2005                 RF_Precision  0.879195  0.6633613  0.9770115
+ 2005                    RF_Recall  0.808642  0.6363636  0.9045247
+ 2005               RF_Specificity  0.979045  0.9601083  0.9950984
+ 2005                        RF_F1  0.842444  0.6666667  0.9230769
+ 2005                      SVM_MCC  0.763645  0.5727932  0.8617221
+ 2005                SVM_Precision  0.847222  0.5869565  0.9879554
+ 2005                   SVM_Recall  0.753086  0.5851064  0.8369639
+ 2005              SVM_Specificity  0.974389  0.9456737  0.9976636
+ 2005                       SVM_F1  0.797386  0.6091704  0.8844629
+ 2005       Delta_MCC_RF_minus_SVM  0.051541  0.0062521  0.0875024
+ 2005 Delta_Precision_RF_minus_SVM  0.031972 -0.0307712  0.0909777
+ 2005    Delta_Recall_RF_minus_SVM  0.055556  0.0162536  0.0842707
+ 2009                       RF_MCC  0.874105  0.7745451  0.9242372
+ 2009                 RF_Precision  0.905063  0.7735849  0.9637142
+ 2009                    RF_Recall  0.882716  0.7826087  0.9391334
+ 2009               RF_Specificity  0.982538  0.9691771  0.9927015
+ 2009                        RF_F1  0.893750  0.7955801  0.9400024
+ 2009                      SVM_MCC  0.898919  0.8027380  0.9453922
+ 2009                SVM_Precision  0.947020  0.8378378  0.9890110
+ 2009                   SVM_Recall  0.882716  0.7698413  0.9463458
+ 2009              SVM_Specificity  0.990687  0.9822560  0.9975255
+ 2009                       SVM_F1  0.913738  0.8202739  0.9568636
+ 2009       Delta_MCC_RF_minus_SVM -0.024814 -0.0602263  0.0088422
+ 2009 Delta_Precision_RF_minus_SVM -0.041957 -0.0986417 -0.0063694
+ 2009    Delta_Recall_RF_minus_SVM  0.000000 -0.0253165  0.0428571
+
+FOLD ACCOUNTING:
+ year outer_fold test_n test_negative test_positive train_n_after_buffer
+ 2005          1     72            22            50                  935
+ 2005          2    244           211            33                  688
+ 2005          3    269           248            21                  698
+ 2005          4    191           160            31                  698
+ 2005          5    245           218            27                  724
+ 2009          1     72            22            50                  935
+ 2009          2    244           211            33                  688
+ 2009          3    269           248            21                  698
+ 2009          4    191           160            31                  698
+ 2009          5    245           218            27                  724
+ train_negative train_positive excluded_by_buffer test_blocks
+            834            101                 14           1
+            565            123                 89           5
+            562            136                 54           6
+            578            120                132           7
+            625             99                 52           4
+            834            101                 14           1
+            565            123                 89           5
+            562            136                 54           6
+            578            120                132           7
+            625             99                 52           4
+
+MPR TOPOGRAPHIC ANALYSIS:
+Pearson chi-square = 105.33196, df = 7, asymptotic p = 8.5195e-20; Monte Carlo p = 1e-05 (99,999 simulations).
+McFadden R2 = 0.07235. Pearson-residual Moran's I (8-nearest-neighbor, row-standardized) = 0.73064; two-sided permutation p = 0.0001 (9,999 permutations).
+ aspect healthy infested total     rate    CI_low  CI_high
+      N     465       35   500 0.070000 0.0492386 0.096011
+     NE     236       17   253 0.067194 0.0396269 0.105405
+      E     120        6   126 0.047619 0.0176733 0.100766
+     SE      32        2    34 0.058824 0.0072049 0.196773
+      S      11        8    19 0.421053 0.2025214 0.665002
+     SW      20       13    33 0.393939 0.2290662 0.578606
+      W      87       23   110 0.209091 0.1374033 0.297035
+     NW     354       16   370 0.043243 0.0249161 0.069276
+         term estimate std_error        z     p_value   CI_low   CI_high
+  (Intercept) -2.59392  0.109906 -23.6013 3.7369e-123 -2.80933 -2.378509
+        z_DEM -0.26241  0.109343  -2.3998  1.6403e-02 -0.47671 -0.048096
+      z_Slope -0.13076  0.105031  -1.2450  2.1314e-01 -0.33662  0.075096
+ z_aspect_sin -0.32417  0.091323  -3.5497  3.8574e-04 -0.50315 -0.145175
+ z_aspect_cos -0.46166  0.081602  -5.6574  1.5364e-08 -0.62160 -0.301722
+ odds_ratio OR_CI_low OR_CI_high
+   0.074726  0.060245   0.092689
+   0.769199  0.620820   0.953042
+   0.877428  0.714182   1.077988
+   0.723131  0.604620   0.864871
+   0.630238  0.537087   0.739544
+
+MPR / BOOK OVERLAP:
+ Book2009_n MPR_n exact_coordinate_overlap overlap_Book_pct overlap_MPR_pct
+       1021  1445                      928          0.90891         0.64221

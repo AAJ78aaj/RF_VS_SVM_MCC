@@ -1,0 +1,57 @@
+  year model  TN FP FN TP   N        OA     Kappa       MCC Precision    Recall
+1 2005    RF 251  4  7 37 299 0.9632107 0.8491769 0.8498962 0.9024390 0.8409091
+2 2005   SVM 248  7  6 38 299 0.9565217 0.8283961 0.8284683 0.8444444 0.8636364
+3 2009    RF 253  2  4 40 299 0.9799331 0.9185212 0.9188602 0.9523810 0.9090909
+4 2009   SVM 253  2  5 39 299 0.9765886 0.9040216 0.9047874 0.9512195 0.8863636
+  Specificity        F1
+1   0.9843137 0.8705882
+2   0.9725490 0.8539326
+3   0.9921569 0.9302326
+4   0.9921569 0.9176471
+Spatial validation: year 2005, outer fold 1/5
+Spatial validation: year 2005, outer fold 2/5
+Spatial validation: year 2005, outer fold 3/5
+Spatial validation: year 2005, outer fold 4/5
+Spatial validation: year 2005, outer fold 5/5
+Spatial validation: year 2009, outer fold 1/5
+Spatial validation: year 2009, outer fold 2/5
+Spatial validation: year 2009, outer fold 3/5
+Spatial validation: year 2009, outer fold 4/5
+Spatial validation: year 2009, outer fold 5/5
+Warning message:
+In chisq.test(tab, correct = FALSE) :
+  Chi-squared approximation may be incorrect
+Sensitivity geometry: 2.5k block / 0.5k buffer
+Spatial validation: year 2005, outer fold 1/5
+Spatial validation: year 2005, outer fold 2/5
+Spatial validation: year 2005, outer fold 3/5
+Spatial validation: year 2005, outer fold 4/5
+Spatial validation: year 2005, outer fold 5/5
+Spatial validation: year 2009, outer fold 1/5
+Spatial validation: year 2009, outer fold 2/5
+Spatial validation: year 2009, outer fold 3/5
+Spatial validation: year 2009, outer fold 4/5
+Spatial validation: year 2009, outer fold 5/5
+Sensitivity geometry: 5k block / 1k buffer, origin (0,2.5k)
+Spatial validation: year 2005, outer fold 1/5
+Spatial validation: year 2005, outer fold 2/5
+Spatial validation: year 2005, outer fold 3/5
+Spatial validation: year 2005, outer fold 4/5
+Spatial validation: year 2005, outer fold 5/5
+Spatial validation: year 2009, outer fold 1/5
+Spatial validation: year 2009, outer fold 2/5
+Spatial validation: year 2009, outer fold 3/5
+Spatial validation: year 2009, outer fold 4/5
+Spatial validation: year 2009, outer fold 5/5
+Sensitivity geometry: 7.5k block / 1.5k buffer
+Spatial validation: year 2005, outer fold 1/5
+Spatial validation: year 2005, outer fold 2/5
+Spatial validation: year 2005, outer fold 3/5
+Spatial validation: year 2005, outer fold 4/5
+Spatial validation: year 2005, outer fold 5/5
+Spatial validation: year 2009, outer fold 1/5
+Spatial validation: year 2009, outer fold 2/5
+Spatial validation: year 2009, outer fold 3/5
+Spatial validation: year 2009, outer fold 4/5
+Spatial validation: year 2009, outer fold 5/5
+Finished. Results are in: /home/ubuntu/revision_work/r_code_package/MPBB_R_Code/outputs
